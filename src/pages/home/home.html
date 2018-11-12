@@ -1,0 +1,39 @@
+
+<ion-content>
+    <!-- <button ion-button (click)="pushPage()" > GENERATE </button>
+  <button ion-button secondary menuToggle>Toggle Menu</button> -->
+ <header>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle circle-start spin" (click)="pushPage()">
+      <h4>Start </h4>
+    </div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <h3>PDF CREATOR PRO</h3>
+    <ion-icon ios="ios-list" md="ios-list" menuToggle></ion-icon>
+
+  </header>
+  <div class="item-list" padding>
+    <h3>latest conversion</h3>
+    <ion-list *ngIf="latestConvertion.length ==0 ; else latestPDF">
+        <h5 id="emptyConvertion">You haven't done any conversion yet. <a (click)="pushPage()">Start converting </a> </h5>
+     </ion-list>
+        <ng-template #latestPDF>
+            <ion-card *ngFor="let item of latestConvertion" >
+              <ion-card-content (click)="openPdf(item.path)">
+                <ion-row>
+                  <ion-col col-2>
+                    <img src="assets/imgs/pdf.png" width="40px" alt="">
+                  </ion-col>
+                  <ion-col col-10>
+                      <h5>{{item.name}} </h5>
+                      <span>2018-12-19</span>
+                      <button (click)="openPdf(item.path)" >Preview</button>
+                    </ion-col>
+                </ion-row>
+              </ion-card-content>
+            </ion-card>
+        </ng-template>
+      </div>
+</ion-content>

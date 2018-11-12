@@ -1,0 +1,65 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Edit Image</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <ion-list *ngIf="image">
+      <ion-item>
+        <ion-label>Height</ion-label>
+        <ion-select [(ngModel)]="image.height">
+            <ion-option value="Auto"> Auto</ion-option>
+            <ion-option value="FullPage">Full Page</ion-option>
+            <ion-option value="custom">Custom</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="image.height == 'custom'">
+        <ion-label>Custom Height(px) </ion-label>
+        <ion-input type="number" [(ngModel)]="height" ></ion-input>
+      </ion-item>
+      <ion-item>
+            <ion-label>Width</ion-label>
+            <ion-select [(ngModel)]="image.width">
+                <ion-option value="Auto"> Auto</ion-option>
+                <ion-option value="FullPage">Full Page</ion-option>
+                <ion-option value="custom">Custom</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item *ngIf="image.width == 'custom'">
+            <ion-label>Custom Width(px) </ion-label>
+            <ion-input type="number"  min="20" step="10"  [(ngModel)]="width" ></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Margin</ion-label>
+              <ion-input type="number"  min="0" step="10"  [(ngModel)]="margin" ></ion-input>
+            </ion-item>
+        <ion-item>
+            <ion-label>Position</ion-label>
+            <ion-select [(ngModel)]="image.position">
+                <ion-option value="Auto"> Auto</ion-option>
+                <ion-option value="absolute">Absolute</ion-option>
+            </ion-select>
+          </ion-item>
+          <div *ngIf="image.position != 'Auto'">
+            <ion-item>
+              <ion-label>Position direction </ion-label>
+              <ion-select [(ngModel)]="positionDirection">
+                  <ion-option value="left"> Left</ion-option>
+                  <ion-option value="center">Center</ion-option>
+                  <ion-option value="right">Right</ion-option>
+              </ion-select>
+            </ion-item>
+          </div>
+    </ion-list>
+    <button class="btnEdit" ion-button full (click)="saveImage(height)">Edit</button>
+</ion-content>

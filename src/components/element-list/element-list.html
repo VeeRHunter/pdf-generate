@@ -1,0 +1,49 @@
+<div *ngFor="let item of items;let index = index" class="item-wrapper" >
+    <div *ngIf="item.type == 'image'" selection #imgWrapper (deselectAll)="DeselectAllElement()">
+        <button class="delete-img" (click)="deleteImage(index)" >Delete</button>
+        <img [src]="item.base64"
+             [attr.data-width]="item.width"
+             [attr.data-height]="item.height"
+             [attr.data-position]="item.position"
+             [attr.data-positionDirection]="item.positionDirection"
+             [attr.data-margin]="item.margin">
+        <div class="edit-imageOption">
+            <button ion-fab (click)="editImage(item)" >
+              <ion-icon ios="ios-create" md="md-create"></ion-icon>
+            </button>
+            <div class="img-info">
+              <p>height : {{item.height}}</p>
+              <p>width : {{item.width}}</p>
+              <p>Margin : {{item.margin}}px</p>
+              <p>Position : {{item.position}}</p>
+              <p *ngIf="item.positionDirection">Direction : {{item.positionDirection}}</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="item.type == 'text'">
+      <div class="text-wrapper" #textItem>
+          <div
+          draggable [drag]="item.position =='absolute' ? true : false"
+          class="popover"
+          [style.color]="item.color"
+          [style.fontSize]="item.fontSize < maxTextSize ? item.fontSize + 'px' : maxTextSize +'px'"
+          [style.width]="item.width +'px'"
+          [style.zIndex]="10"
+          [attr.data-fontSize]="item.fontSize"
+
+          >
+          {{item.text}}
+          <ion-icon (click)="showEditText(textItem)" name="arrow-dropdown" class="btnEditText"></ion-icon>
+          <div class="text-option">
+              <p (click)="deleteText(textItem)" >DELETE</p>
+              <p (click)="editText(item)"> EDIT</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<h4 *ngIf="items.length == 0" class="emptyItems">Please add image or text to convert</h4>
+
+

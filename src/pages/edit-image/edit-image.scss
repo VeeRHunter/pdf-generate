@@ -1,0 +1,15 @@
+page-edit-image  {
+  .content{
+    background: white;
+    .btnEdit{
+      background: linear-gradient(to right, #fc5555,#f77062);
+    }
+  }
+
+  ion-navbar{
+    ion-icon{
+      font-size: 25px;
+      color: white
+    }
+  }
+}

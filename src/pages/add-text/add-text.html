@@ -1,0 +1,53 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add Text</ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="CloseEdit()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+    <ion-list >
+      <ion-item>
+        <ion-label >Text</ion-label>
+        <ion-textarea rows="5" [(ngModel)]="item.text" placeholder="Enter Your Text Here"></ion-textarea>
+      </ion-item>
+      <ion-item>
+          <ion-label >Font Size (px)</ion-label>
+          <ion-input type="number" [(ngModel)]="item.fontSize" ></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label >Width</ion-label>
+              <ion-select [(ngModel)]="item.width" >
+                <ion-option value="auto" >Auto</ion-option>
+                <ion-option value="custom" >Custom</ion-option>
+              </ion-select>
+        </ion-item>
+        <ion-item *ngIf="item.width != 'auto'">
+            <ion-label >Custom Width (px)</ion-label>
+            <ion-input type="number" min="20" [(ngModel)]="width" ></ion-input>
+          </ion-item>
+      <ion-item>
+        <ion-label >Position</ion-label>
+            <ion-select [(ngModel)]="item.position" >
+              <ion-option value="absolute" >Absolute</ion-option>
+              <ion-option value="relative" >Relative</ion-option>
+            </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label >Color</ion-label>
+          <ion-input type="text" disabled [(ngModel)]="item.color"></ion-input>
+      </ion-item>
+      <div class="color-picker">
+          <color-picker [hexColor]="'#012362'" (colorChanged)="changeColor($event)"></color-picker>
+      </div>
+
+      <button ion-button full class="btnEdit" (click)="addText()" >Add Text</button>
+
+    </ion-list>
+</ion-content>

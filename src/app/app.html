@@ -1,0 +1,23 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content >
+    <ion-list  menuClose >
+      <ion-item (click)="IntroPage()">
+        HOME
+      </ion-item>
+      <ion-item (click)="pusgPage(HomePage)" >
+        LATEST CONVERSION
+      </ion-item>
+      <ion-item  (click)="pusgPage(pdfBuilderPage)" >
+         PDF CREATOR
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<ion-nav [root]="rootPage" #content ></ion-nav>

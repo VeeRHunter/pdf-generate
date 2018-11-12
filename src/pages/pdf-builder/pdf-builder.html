@@ -1,0 +1,29 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>PDF Creator</ion-title>
+    <ion-buttons end>
+        <button ion-button round  id="generate" (click)="generatePDF()">
+           <span>SAVE</span>
+            <ion-icon ios="ios-download-outline" md="md-download"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <!-- Here you can found list of item (Image or Text) -->
+    <element-list></element-list>
+
+    <ion-fab right bottom class="btnView">
+        <button ion-fab class="btnDocument" (click)="ViewPdf()" ><ion-icon name="search"></ion-icon></button>
+    </ion-fab>
+    <ion-fab right bottom  #fab>
+        <button ion-fab class="btnDocument"><ion-icon name="add"></ion-icon></button>
+        <ion-fab-list side="top">
+          <button ion-fab  (click)="addCameraPhoto()"><ion-icon name="md-camera"></ion-icon></button>
+          <button ion-fab  (click)="selectImage()"><ion-icon name="images"></ion-icon></button>
+          <button ion-fab (click)="addText()">A</button>
+        </ion-fab-list>
+      </ion-fab>
+</ion-content>

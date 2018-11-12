@@ -1,0 +1,31 @@
+.toolbar-background {
+  background: linear-gradient(to right, #fc5555,#f77062);
+  color: white;
+}
+.toolbar-title , .back-button{
+  color: white;
+}
+.toolbar{
+  button#generate{
+    display: flex;
+    align-items: center;
+    color: white;
+    border: solid 1px white;
+    ion-icon{
+      font-size: 20px;
+      margin-left: 5px;
+    }
+  }
+}
+
+.holdAndPress h3{
+  text-align: center;
+  font-size: 12px;
+}
+.btnView{
+  right: 75px !important;
+}
+
+.btnDocument{
+  background: #fc5555;
+}

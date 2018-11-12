@@ -1,0 +1,125 @@
+.content{
+  background: #f6f9fc
+}
+header  {
+  background: linear-gradient(to top, #fc5555,#f77062);
+  height: 250px;
+  margin-top: -20px;
+  position: relative;
+   h3{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 50px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+    color:white;
+    font-weight: lighter;
+  }
+  h4{
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-transform: uppercase;
+    margin: auto;
+    height: 20px;
+    text-align: center;
+    color: #fc5555;
+    background: -webkit-linear-gradient(#fc5555, #f77062);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .circle{
+    border: none;
+    opacity: 0.1;
+    background-color: #ffffff;
+
+    &:nth-child(1),&:nth-child(2)
+    {
+      left: 32px;
+      top: -93px;
+    }
+    &:nth-child(3)
+    {
+      bottom: -68px;
+      top: auto;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background: white;
+      opacity: 1;
+      border: none;
+    }
+    &:nth-child(4)
+    {
+      right: -48px;
+      left: auto;
+    }
+  }
+  ion-icon{
+    position: absolute;
+    top: 40px;
+    font-size: 40px;
+    left: 15px;
+    color: white;
+  }
+}
+
+
+
+.item-list{
+  margin-top: 97px;
+  h3{
+    color: #a3a3a3;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  h5{
+    font-size: 11px;
+    color: #fa5d59;
+  }
+  #emptyConvertion{
+    text-align: center;
+      margin-top: 23px;
+  }
+  span{
+    color: #aaaaaa;
+    font-size: 11px;
+  }
+  button{
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    background: none;
+    bottom: 0;
+    color: white;
+    transform: rotate(-30deg) translateX(7px) translateY(-7px);
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+  ion-card-content.card-content{
+    position: relative;
+    img{
+      width: 40px;
+      height: 40px;
+    }
+    &::after{
+      content: "";
+      width: 77px;
+      height: 197px;
+      position: absolute;
+      background: linear-gradient(to top, #fc5555,#f77062);
+      top: 0;
+      right: 0;
+      transform: rotate(60deg) translateX(-30px);
+    }
+  }
+}
